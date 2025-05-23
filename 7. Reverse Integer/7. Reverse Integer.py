@@ -1,26 +1,20 @@
-class Solution(object):
-    def reverse(self, x):
-        """
-        :type x: int
-        :rtype: int
-        """
+class Solution:
+    def reverse(self, x: int) -> int:
+        INT_MAX : int = 2**31 - 1
+        INT_MIN : int = -2**31
 
-        if x == 0 or x > 2147483647 or x < -2147483647 : return 0
+        res : int = 0
+        sign : int = -1 if x < 0 else 1
+        x = abs(x)
 
-        new_str = ""
-        nol_digits = True
-        
-        for s in str(x)[::-1]:
-            if s == "-": 
-                new_str = "-" + new_str
-                continue
-            if s != '0' : 
-                nol_digits = False
-            if s == '0' and nol_digits : 
-                continue
+        while x != 0:
+            digit : int = x % 10
+            x //= 10
+
+            # Check overflow before multiplying
+            if res > (INT_MAX - digit) // 10:
+                return 0
             
-            new_str = new_str + s
+            res : int = res * 10 + digit
         
-        if int(new_str) > 2147483647 or int(new_str) < -2147483647 : return 0
-
-        return int(new_str)
+        return sign * res
