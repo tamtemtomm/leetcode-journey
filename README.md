@@ -22,6 +22,6 @@ Each folder corresponds to a specific problem and contains:
 ## 🧠 Purpose
 
 This repository serves as:
-- 📚 A study log for practicing data structures and algorithms.
-- 🧪 A showcase of problem-solving in multiple languages.
-- 🛠️ A reference for others learning LeetCode-style problems.
+- A study log for practicing data structures and algorithms.
+- A showcase of problem-solving in multiple languages.
+- A reference for others learning LeetCode-style problems.
